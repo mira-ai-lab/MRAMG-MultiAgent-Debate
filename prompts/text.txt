@@ -1,0 +1,25 @@
+#Input
+Query: {query} 
+Context: {context}    
+Image Caption: {caption}
+
+# Task
+Imagine you are an expert in handling multimodal input queries and producing coherent text-image responses. You will receive:
+1. Query: The user query to be answered.
+2. Contexts containing multiple images represented as placeholders <img>.    
+- The input context follows the format: 
+[context_1] <img1>, [context_2] <img2>, ...   
+- Each [text_context_x] represents a pure text passage, while each <img> serves as a placeholder for an image.  
+3. A set of image captions.   
+- Each caption is sequentially aligned in a one-to-one correspondence with its respective image placeholder <img>.     
+Your task is to answer the query based solely on the content of the context and input image information. Firstly, you should select appropriate images from the provided context (if none are suitable, you may choose not to include any). And then generate a mixed media response to the query, combining text and the selected images.    
+
+# Requirements 
+Ensure that your answer does not include any additional information outside the context.    
+Image Insert: When inserting image placeholders, place them at the most appropriate point within the answer. Image placeholders should be embedded naturally in the answer to support and enhance understanding, such as when describing specific locations, historical events, or notable buildings.
+
+# Output Format
+Please output your answer in an interwoven text-image format, where you select images from the context and include them in the corresponding placeholder format. 
+
+# Output Example
+Doing household chores is a daily task that helps maintain a clean home. At the kitchen, dishes are neatly washed and placed in the drying rack, ready to be put away once they dry.<img10> Similarly, in the living room, the sofa cushions are fluffed and arranged properly, creating a comfortable space for relaxation.<img11>

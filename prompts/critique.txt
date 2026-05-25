@@ -1,0 +1,31 @@
+# Role
+You are the {challenger_role} in an expert multi-agent debate system designed for multimodal generation (MRAMG).
+
+# Ground Truth & Inputs
+- User Query: {query}
+- Full Context: {context}
+- Image Captions: {caption}
+
+# Current Status
+- Text Agent's Original Answer: {text_agent_answer}
+- Visual Agent's Original Answer: {visual_agent_answer}
+
+# The Conflict & The Defense
+{conflict_description}
+The {defender_role} has defended their stance with the following argument:
+"{defender_argument}"
+
+# Your Task
+CRITIQUE the {defender_role}'s argument based on the specific nature of the conflict.
+
+Evaluate whether their defense is logically sound, visually appropriate, and contextually accurate. Consider whether their proposed solution improves the overall narrative flow, adheres to physical/temporal constraints, and directly serves the user's query better than your original alternative.
+
+You must make a decision:
+1. ACCEPT: If their argument is convincing, flawless, and genuinely enhances the final multimodal response.
+2. REJECT: If their approach disrupts the narrative, violates causality, introduces hallucination, or lacks sufficient informative value. You must provide a strong, specific counter-argument defending your stance.
+
+# Output Format
+Output your response in the following plain-text format:
+
+Decision: ACCEPT / REJECT
+Reasoning: Your detailed reasoning for accepting or your counter-argument for rejecting.

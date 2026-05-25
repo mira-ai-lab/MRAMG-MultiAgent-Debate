@@ -1,0 +1,34 @@
+# Input    
+Query: {query}
+Answer: {answer}   
+Image Context: {context}    
+Image Caption: {caption}
+
+# Task
+Imagine you are a multimodal QA evaluation expert. Your task is to evaluate the effectiveness of selected images within an answer to the given query. Specifically, the answer contains both text and images. You need to assess whether the selected images are effective to the QA pair in terms of content. The evaluation results should be output in the form of reasons and scores.
+
+ Answer Input Format    
+[text_1] <img_1> [text_2] <img_2>...
+Explanation:
+Each [text_x] is a piece of pure text context, and each <img> represents an image. The images will be provided in the same order as the placeholders <img>.
+
+# Image Context Input Format   
+[context_above] <img> [context_bottom]   
+Explanation:    
+This format represents the contextual information surrounding the image within its original document. It provides supplementary information to assist in evaluating the image.
+
+# Scoring Criteria of Effectiveness (Each Image)  
+When scoring, strictly adhere to the following standards, with a range of 1 to 5:   
+- 1 point, Harmful: The images in the answer are harmful to answering the query, such as causing serious misunderstanding for the reader.    
+- 2 points, Irrelevant: The images in the answer are mostly unrelated to the query and the answer, with little to no connection overall.    
+- 3 points, Partially Effective: The images in the answer are somewhat effective in helping the reader understand the answer to the query.   
+- 4 points, Mostly Effective: The images in the answer are largely consistent with the answer to the query and effectively help the reader better understand the answer.    
+- 5 points, Highly Effective: The images in the answer provide crucial details for answering the query. They not only align with the answer but also offer highly effective supplementary information that aids in understanding the query-answer pair from a multimodal perspective.   
+Provide a brief reason for the evaluation along with a score from 1 to 5. Ensure you do not use any evaluation criteria beyond the query and answer.
+
+# Output Format    
+Please output two lines for the results: the first line is your reasoning for the score, and the second line is the score. Strictly follow this format without any additional content.
+
+# Output Example    
+Highly effective: The images in the answer, depicting the front entrance with three pillars, are highly effective in helping readers understand the query about how many pillars there are. They strongly support the response that states there are three pillars. All images provide crucial details that aid in the reader's comprehension.
+<effective_score>5</effective_score>    

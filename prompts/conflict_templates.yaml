@@ -1,0 +1,42 @@
+# prompts/conflict_templates.yaml
+
+defense:
+  set_conflict:
+    conflict_description: |
+      We are currently resolving a conflict regarding the image placeholder: {disputed_image}. 
+      As the {defender_role}, you chose to use {disputed_image}, while the {challenger_role} did not. 
+  
+  order_conflict:
+    conflict_description: |
+      We are currently resolving a sequential conflict regarding the ordering of images.
+      Both agents agreed to include these images, but disagreed on their chronological or logical sequence:
+      - Your proposed sequence ({defender_role}): {defender_img_order} 
+      - The {challenger_role}'s proposed sequence: {challenger_img_order}
+
+critique:
+  set_conflict:
+    conflict_description: |
+      We are currently resolving a conflict regarding the image placeholder: {disputed_image}.
+      The {defender_role} chose to use this image, while you (the {challenger_role}) did not.
+  
+  order_conflict:
+    conflict_description: |
+      We are currently resolving a sequential conflict regarding the ordering of images.
+      Both agents agreed to include these images, but disagreed on their chronological or logical sequence: 
+      - Your proposed sequence ({challenger_role}): {challenger_img_order} 
+      - The {defender_role}'s proposed sequence: {defender_img_order}
+
+judge:
+  set_conflict:
+    conflict_description: |
+      Conflict Type: INCLUSION (Set Conflict)
+      Disputed Item: {disputed_image}
+      The {defender_role} argued to INCLUDE this image, while the {challenger_role} argued to EXCLUDE it.
+    
+  order_conflict:
+    conflict_description: |
+      Conflict Type: SEQUENTIAL (Order Conflict)
+      Disputed Item: Image Ordering
+      Both agents agreed to include the images, but disagreed on the sequence.
+      - {defender_role}'s proposed sequence: {defender_img_order}
+      - {challenger_role}'s proposed sequence: {challenger_img_order}

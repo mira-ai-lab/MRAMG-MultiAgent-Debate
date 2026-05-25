@@ -1,0 +1,32 @@
+# Input  
+Query: {query}
+Answer: {answer}   
+Image Context: {context}    
+Image Caption: {caption}
+
+# Task    
+Imagine you are a multimodal QA evaluation expert. Your task is to evaluate the relevance of selected images within an answer to the given query. Specifically, the answer contains both text and images. You need to assess whether the selected images are relevant to the QA pair in terms of content. The evaluation results should be output in the form of reasons and scores.
+
+# Answer Input Format   
+[text_1] <img_1> [text_2] <img_2>...  
+Explanation:   
+Each [text_x]” is a piece of pure text context, and each <img> represents an image. The images will be provided in the same order as the placeholders <img>.
+
+# Image Context Input Format    
+[context_above] <img> [context_bottom]    
+Explanation:     
+This format represents the contextual information surrounding the image within its original document. It provides supplementary information to assist in evaluating the image.
+
+# Scoring Criteria of Relevance (Each Image)    
+When scoring, strictly adhere to the following standards, with a range of 1 to 5:    
+- 1 point: Completely unrelated: The image has no connection to the main content of the query and answer, and is irrelevant.   
+- 2 points: Weakly related: The image has a very tenuous connection to the main content of the query and answer.    
+- 3 points: Partially related: The image is somewhat connected to part of the content of the query and answer.    
+- 4 points: Mostly related: The image has a fairly clear connection to the main content of the query and answer.    
+- 5 points: Highly related: The image is highly relevant to the content of the query and answer. 
+Provide a brief reason for the evaluation along with a score from 1 to 5. Ensure you do not use any evaluation criteria beyond the query and answer.
+# Output Format    
+Please output two lines for the results: the first line is your reasoning for the score, and the second line is the score. Strictly follow this format without any additional content.
+# Output Example    
+Partially related, the image depicts the general structure of the gate but does not clearly show the number of pillars, making it only somewhat relevant to the QA.  
+<relevance_score>3</relevance_score>  

@@ -1,0 +1,25 @@
+# Input   
+Query: {query} 
+Context: {context}    
+Image Caption: {caption}
+
+# Task
+Imagine you are an expert in handling multimodal input queries and producing coherent text-image responses.
+You will receive:    
+1. Query: The user query to be answered.
+2. Contexts.    
+3. A set of images.
+4. A set of image captions.   
+- Each caption is sequentially aligned in a one-to-one correspondence with its respective input image.
+
+Your task is to answer the query based solely on the content of the context and input image information. Firstly, you should visually and textually understand the images based on the given images and image captions to select appropriate images from the input images (if none are suitable, you may choose not to include any). Next, based on the provided contexts and query, generate a multi-modal answer combining text and the selected images. 
+
+# Requirements
+Ensure that your answer does not include any additional information outside the context. Please note, your answer should be presented in an interwoven text-image format, where you select images from the context and output them in the corresponding placeholder format. Please provide only the answer, without including any analysis.
+Image Insert: When inserting image placeholders, place them at the most appropriate point within the answer. Image placeholders should be embedded naturally in the answer to support and enhance understanding, such as when describing specific locations, historical events, or notable buildings.
+
+# Output Format    
+Please output the answer in an interwoven text-image format, where you select images from the context provided and output them in the corresponding placeholder format.
+
+# Output Example    
+Doing household chores is a daily task that helps maintain a clean home. At the kitchen, dishes are neatly washed and placed in the drying rack, ready to be put away once they dry.<img10> Similarly, in the living room, the sofa cushions are fluffed and arranged properly, creating a comfortable space for relaxation.<img11>

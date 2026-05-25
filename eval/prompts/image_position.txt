@@ -1,0 +1,35 @@
+# Input  
+Query: {query}
+Answer: {answer}   
+Image Context: {context}    
+Image Caption: {caption}
+
+# Task    
+Imagine you are a multimodal problem-solving expert tasked with evaluating whether the position of each selected image within an answer to the given query is appropriate.
+
+# Answer Input Format   
+[text_1] <img_1> [text_2] <img_2>...   
+Explanation:   
+Each [text_x] is a segment of pure text context, and each <img> represents an image. The images will be presented in the same order as the placeholders <img>. 
+
+# Image Context Input Format    
+[context_above] <img> [context_bottom] 
+
+Explanation:    
+This format represents the contextual information surrounding the image within its original document. It provides supplementary information to assist in evaluating the image.
+
+
+# Revised Evaluation Criteria:   
+Strictly follow the criteria below to assign a score of 0 or 1:    
+- 0 point, Inappropriate Position: The image is irrelevant to both the preceding and following context, or the position of the image does not enhance content understanding or visual appeal. The insertion of the image does not align with the logical progression of the text and fails to improve the reading experience or information transmission.    
+- 1 point, Appropriate Position: The image is contextually relevant to at least one of the surrounding contexts (preceding or following), and it enhances content understanding or visual effect. The position of the image aligns with the logical flow of the text and is inserted appropriately, improving the overall information delivery. If the description of the image is detailed, it further clarifies the connection between the image and the text, enhancing the overall expressive effect.
+
+# Output Format   
+Provide a brief justification for the evaluation and a score of either 0 or 1. Ensure no evaluation criteria beyond the provided query and answer are used.
+Please output two lines for each image: the first line is your reasoning for the score, and the second line is the score. Strictly follow this format without any additional content.
+
+# Output Example
+<img_1> displays a distant aerial view of the site, but the surrounding context focuses on intricate design details of the main entrance. The image placement does not align with the described content and does not improve comprehension.  
+<img_1_score>0</img_1_score>      
+<img_2> shows a close-up of one of the pillars, which is directly referenced in the following context about the structure's details. The image placement aligns with the description, enhancing understanding.     
+<img_2_score>1</img_2_score>

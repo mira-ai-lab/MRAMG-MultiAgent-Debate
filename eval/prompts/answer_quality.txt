@@ -1,0 +1,35 @@
+# Input  
+Query: {query}
+Answer: {answer}   
+Image Context: {context}    
+Image Caption: {caption}
+
+# Task  
+Imagine you are a multimodal QA evaluation expert. Your task is to evaluate the overall quality of the answer. Specifically, the answer contains both text and images. The evaluation results should be output in the form of reasons and scores.
+
+# Answer Input Format    
+[text_1] <img_1> [tex_2] <img_2>...
+Explanation:   
+Each [text_x] is a piece of pure text context, and each <img> represents an image. The images will be provided in the same order as the placeholders <img>.
+
+# Image Context Input Format    
+[context_above] <img> [context_bottom]
+
+Explanation:    
+This format represents the contextual information surrounding the image within its original document. It provides supplementary information to assist in evaluating the image.
+
+# Evaluation Criteria of Overall Quality    
+Strictly follow the scoring criteria below to assign a score between 1 and 5:    
+- 1 point, Poor Quality: The answer fails to address the question, the structure is confusing or missing, and the images are irrelevant or not helpful.
+- 2 points, Fair Quality: The answer partially addresses the question but lacks completeness. The structure is weak, and the text-image integration is weak or only partially helpful.
+- 3 points, Average Quality: The answer addresses the question but lacks depth. The structure is clear but could be improved. The images are somewhat helpful but don’t fully enhance understanding.
+- 4 points, Good Quality: The answer is clear and fairly comprehensive. The structure is logical and well-organized, and the images enhance the understanding of the text.
+- 5 points, Excellent Quality: The answer is detailed and insightful. The structure is strong and cohesive, and the images complement the text perfectly, significantly enhancing comprehension. 
+Provide a brief reason for the evaluation along with a score from 1 to 5. Ensure you do not use any evaluation criteria beyond the query and answer.
+
+# Output Format    
+Please output two lines for the results: the first line is your reasoning for the score, and the second line is the score. Strictly follow this format without any additional content.
+
+# Output Example  
+The answer provides a complete and coherent description of the Irish bouzouki, and the images in the answer help reinforce the explanation of its appearance. The structure is logical and easy to follow, with all images appropriately enhancing the reader's understanding of the instrument.
+<overall_quality_score>5</overall_quality_score>

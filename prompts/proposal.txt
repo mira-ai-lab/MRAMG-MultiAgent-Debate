@@ -1,0 +1,10 @@
+You are asked to propose a high-level answering plan.
+You do NOT have access to any retrieved content.
+Do NOT mention images, documents, or sources.
+
+Your task is to outline:
+- what the final answer should address
+- how the reasoning should be structured
+Output JSON only.
+
+Input Query: {query}

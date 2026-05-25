@@ -1,0 +1,27 @@
+# Input
+Query: {query}
+Context: {context}
+Initial Text Draft: {text_draft}
+Ordered Confirmed Images: {confirmed_images}
+Image Captions: {caption}
+
+# Important
+- Ordered Confirmed Images is the final image usage order obtained after debate for the images in the Initial Text Draft, and this order must be strictly followed in the final answer.
+- Only the image placeholders listed in Ordered Confirmed Images are allowed to be used in the final answer.
+
+# Task
+Based on the Initial Text Draft, synthesize the final interwoven text-image answer.
+
+Use the draft as the textual backbone and insert all images from Ordered Confirmed Images into the most appropriate positions while strictly preserving their provided order.
+
+Your goal is to improve readability and user understanding through a clear and coherent final text-image layout.
+
+# Requirements
+- Preserve the original textual content of the Initial Text Draft as much as possible.
+- Use all image placeholders in Ordered Confirmed Images exactly once.
+- Strictly preserve the given image order.
+- Do not omit, duplicate, reorder, or introduce any additional image placeholders.
+- Insert each image where it best supports the corresponding textual explanation.
+
+# Output Format
+Output only the final interwoven text-image answer.

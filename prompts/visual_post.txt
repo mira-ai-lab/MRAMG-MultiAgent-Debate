@@ -1,0 +1,27 @@
+# Input
+Query: {query}
+Context: {context}
+Confirmed Images: {confirmed_images}
+Image Captions: {caption}
+
+## Important
+- Only some image placeholders in Full Context are actually provided as input images, and each caption is sequentially aligned in a strict one-to-one correspondence with its respective input image.
+
+# Task
+Imagine you are an expert in multimodal response generation.
+
+Your task is to regenerate a coherent final multimodal answer based strictly on the provided Query, Context, and the confirmed images.
+
+You MUST use all image placeholders in Confirmed Images exactly once in the final answer. The ordering and insertion positions of these images should be determined by you based on what best improves the clarity, coherence, and user understanding of the answer.
+
+Do NOT use any image placeholders other than those in Confirmed Images, even if other image placeholders appear in the Full Context.
+
+# Requirements
+- Use only information from the provided Context.
+- Every image in Confirmed Images must appear in the final answer.
+- Do not use any image outside Confirmed Images.
+- Decide the most appropriate ordering and placement of the confirmed images based on the narrative flow and explanatory needs of the answer.
+- Place each image where it best supports the corresponding textual content and improves user comprehension.
+
+# Output Example    
+Doing household chores is a daily task that helps maintain a clean home. At the kitchen, dishes are neatly washed and placed in the drying rack, ready to be put away once they dry.<img10> Similarly, in the living room, the sofa cushions are fluffed and arranged properly, creating a comfortable space for relaxation.<img11>
